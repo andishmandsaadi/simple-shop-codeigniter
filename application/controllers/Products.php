@@ -74,4 +74,16 @@ class Products extends CI_Controller {
             redirect('products');
         }
     }
+
+    public function like($product_id) {
+        $user_id = $this->session->userdata('user_id');
+        if (!$user_id) {
+            redirect('users/login');
+        } else {
+            $this->product_model->toggle_like($product_id, $user_id);
+            redirect('products/view/' . $product_id);
+        }
+    }
+
+
 }

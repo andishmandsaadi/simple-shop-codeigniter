@@ -28,4 +28,34 @@ class Product_model extends CI_Model {
         $query = $this->db->get_where('products', array('id' => $id));
         return $query->row_array();
     }
+
+    public function toggle_like($product_id, $user_id) {
+        if ($this->is_liked_by_user($product_id, $user_id)) {
+            // If liked, unlike it
+            $this->db->where('product_id', $product_id);
+            $this->db->where('user_id', $user_id);
+            return $this->db->delete('likes');
+        } else {
+            // If not liked, add like
+            $data = array(
+                'product_id' => $product_id,
+                'user_id' => $user_id
+            );
+            return $this->db->insert('likes', $data);
+        }
+    }
+
+    public function count_likes($product_id) {
+        $this->db->where('product_id', $product_id);
+        $query = $this->db->get('likes');
+        return $query->num_rows();
+    }
+
+    public function is_liked_by_user($product_id, $user_id) {
+        $this->db->where('product_id', $product_id);
+        $this->db->where('user_id', $user_id);
+        $query = $this->db->get('likes');
+        return $query->num_rows() > 0;
+    }
+
 }

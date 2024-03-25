@@ -17,5 +17,16 @@
             <input type="hidden" name="quantity" value="1">
             <button type="submit" class="btn btn-primary">Add to Cart</button>
         <?php echo form_close(); ?>
+        <!-- Toggle Like/Unlike Button -->
+        <?php
+        $user_id = $this->session->userdata('user_id');
+        $is_liked = $user_id ? $this->product_model->is_liked_by_user($product['id'], $user_id) : false;
+        ?>
+        <?php if ($this->session->userdata('logged_in')): ?>
+            <a href="<?php echo site_url('products/like/'.$product['id']); ?>" class="btn btn-primary">
+                <?php echo $is_liked ? 'Unlike' : 'Like'; ?>
+            </a>
+        <?php endif; ?>
+        <p><?php echo $this->product_model->count_likes($product['id']); ?> likes</p>
     </div>
 </div>
