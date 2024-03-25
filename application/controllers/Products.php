@@ -54,7 +54,7 @@ class Products extends CI_Controller {
             // Handle file upload
             $config['upload_path'] = './uploads/';
             $config['allowed_types'] = 'gif|jpg|jpeg|webp|png';
-            $config['max_size'] = '20480'; // 2MB
+            $config['max_size'] = '20480';
             $config['max_width'] = '2000';
             $config['max_height'] = '2000';
 

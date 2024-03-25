@@ -60,5 +60,11 @@ $route['products'] = 'products/index';
 $route['products/create'] = 'products/create';
 $route['products/view/(:any)'] = 'products/view/$1';
 
+$route['cart'] = 'cart/index';
+$route['cart/add'] = 'cart/add';
+$route['cart/remove/(:any)'] = 'cart/remove/$1';
+$route['cart/checkout'] = 'cart/checkout';
+$route['cart/success'] = 'cart/success';
+
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
