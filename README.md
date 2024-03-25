@@ -42,7 +42,7 @@ Log in to your MySQL server and create a new database for the project:
 
 4. **Configure your environment**
 
-edit `application/config/config.php edit` with your database settings and base URL:
+edit `application/config/config.php` with your database settings and base URL:
 
 `composer install`
 
