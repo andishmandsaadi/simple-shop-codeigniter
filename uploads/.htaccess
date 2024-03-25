@@ -1,0 +1,11 @@
+# Deny direct access to PHP files
+<FilesMatch "\.(php|php3|php4|php5|php7|phtml)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+# Allow direct access to other files
+<FilesMatch "\.(gif|jpe?g|png)$">
+    Order Allow,Deny
+    Allow from all
+</FilesMatch>

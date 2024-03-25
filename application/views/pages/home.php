@@ -23,7 +23,7 @@
         <div class="col-md-4">
             <h2>Upload Your Product</h2>
             <p>Got something to sell? Our platform allows you to upload your own products easily to reach thousands of potential customers.</p>
-            <p><a class="btn btn-secondary" href="<?php echo base_url(); ?>products/upload" role="button">Upload now &raquo;</a></p>
+            <p><a class="btn btn-secondary" href="<?php echo base_url(); ?>products/create" role="button">Upload now &raquo;</a></p>
         </div>
         <div class="col-md-4">
             <h2>Community Favorites</h2>
